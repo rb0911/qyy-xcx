@@ -1,0 +1,63 @@
+{
+	"pages": [ //pages数组中第一项表示应用启动页，参考：https://uniapp.dcloud.io/collocation/pages
+		{
+			"path": "pages/index/index",
+			"style": {
+				"navigationBarTitleText": "小秦关关"
+			}
+		},
+		{
+			"path": "pages/msg/msg",
+			"style": {
+				"navigationBarTitleText": "消息"
+			}
+		},
+		{
+			"path": "pages/center/center",
+			"style": {
+				"navigationBarTitleText": "center"
+			}
+		},
+		{
+			"path": "pages/home/home",
+			"style": {
+				"navigationBarTitleText": "小秦关关"
+			}
+		}
+	],
+	"globalStyle": {
+		"navigationBarTextStyle": "black",
+		"navigationBarTitleText": "uni-app",
+		"navigationBarBackgroundColor": "#F8F8F8",
+		"backgroundColor": "#F8F8F8"
+	},
+	"tabBar": {
+		"color": "",
+		"selectedColor": "",
+		"borderStyle": "white",
+		"backgroundColor": "",
+		"list": [
+			{
+				"text": "找对象",
+				"pagePath": "pages/index/index",
+				"iconPath": "static/icons/jiaoyouDark1.png",
+				"selectedIconPath": "static/icons/jiaoyou1.png"
+			},
+			{
+				"text": "消息",
+				"pagePath": "pages/msg/msg",
+				"iconPath": "static/icons/xiaoxiDark1.png",
+				"selectedIconPath": "static/icons/xiaoxi1.png"
+			},
+			{
+				"text": "我的",
+				"pagePath": "pages/center/center",
+				"iconPath": "static/icons/wodeDark1.png",
+				"selectedIconPath": "static/icons/wode1.png"
+			}
+		]
+	},
+	"easycom": {
+		"^u-(.*)": "uview-ui/components/u-$1/u-$1.vue"
+	}
+}
