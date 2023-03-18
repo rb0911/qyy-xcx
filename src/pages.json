@@ -35,7 +35,7 @@
 		"color": "",
 		"selectedColor": "",
 		"borderStyle": "white",
-		"backgroundColor": "",
+		"backgroundColor": "#FAFAFA",
 		"list": [
 			{
 				"text": "找对象",
