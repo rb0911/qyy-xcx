@@ -1,0 +1,35 @@
+
+.qyy-font-size-12{
+  font-size: 1.2rem;
+}
+
+.qyy-font-size-8{
+  font-size: 0.8rem;
+}
+
+.qyy-font-size-7{
+  font-size: 0.7rem;
+}
+
+.qyy-font-size-6{
+  font-size: 0.6rem;
+}
+
+.qyy-flex-row {
+  display: flex;
+  flex-direction: row;
+}
+
+.qyy-tag .u-tag{
+  border-radius: 2rem;
+  padding: 4rpx 8rpx !important;
+  font-size: 8rpx;
+  display: block !important;
+  margin-left: 5rpx;
+}
+
+.qyy-tags-container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
