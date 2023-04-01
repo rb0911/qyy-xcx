@@ -1,7 +1,36 @@
 <template>
   <view class="content">
-    <view class="u-page">
-      <view class="qyy-filter"> </view>
+    <view class="u-page qyy-bg-color-0">
+      <view class="qyy-filter-bar">
+        <view class="qyy-filter-bar-container qyy-flex-row qyy-flex-content-between qyy-bg-color-1 qy-text-color-1">
+
+          <view class="qyy-flex-row qyy-filter-left">
+            <view class="qyy-filter-bar-item" v-for="filter in filterList" :key="filter.key" @click="()=>{openDrawer(filter.key)}" name="filter.title">
+              {{filter.title}} &nbsp; <u-icon :name="filter.icon" class="qyy-font-size-6"></u-icon>
+            </view>
+          </view>
+            
+          <view class="qyy-filter-right">
+            <view class="qyy-filter-bar-item" @click="()=>{openDrawer(filterAll.key)}" name="filterAll.title">
+              {{filterAll.title}} &nbsp; <u-icon :name="filterAll.icon" class="qyy-font-size-12"></u-icon>
+            </view>
+          </view>
+
+            <!-- <view class="qyy-filter-bar-item" @click="()=>{openDrawer(0)}" name="0">所在地 &nbsp; <u-icon name="arrow-down-fill" class="qyy-font-size-6"></u-icon></view>
+            <view class="qyy-filter-bar-item" @click="()=>{openDrawer(1)}" name="1">年龄 &nbsp; <u-icon name="arrow-down-fill" class="qyy-font-size-6"></u-icon></view>
+            <view class="qyy-filter-bar-item" @click="()=>{openDrawer(2)}" name="2">学历 &nbsp; <u-icon name="arrow-down-fill" class="qyy-font-size-6"></u-icon></view>
+            <view class="qyy-filter-bar-item" @click="()=>{openDrawer(3)}" name="3">购房 &nbsp; <u-icon name="arrow-down-fill" class="qyy-font-size-6"></u-icon></view>
+         -->
+        </view>
+      </view>
+
+      <template>
+        <u-popup v-model="showFilter" mode="top" length="500" zoom="false">
+          <view class="qyy-filter-container qyy-bg-color-2">
+            <FiltersComponent :filterId="filterId" :id="'test'"></FiltersComponent>
+          </view>
+        </u-popup>
+      </template>
 
       <view class="qyuy-user-list-container">
         <u-card
@@ -49,13 +78,20 @@
 </template>
 
 <script>
+import FiltersComponent from '../components/filters.vue'
+import { FilterList } from '../../common/constants/common.constants' 
 const indexList = require("../../mock/mock-user-list.json");
+
 export default {
   data() {
     return {
+      filterId: '',
       title: "Hello",
       indexList: indexList.content,
       urls: [],
+      showFilter: false,
+      filterList: FilterList.slice(0, FilterList.length - 1),
+      filterAll: FilterList[FilterList.length - 1]
     };
   },
   onLoad() {
@@ -72,17 +108,42 @@ export default {
         });
       }
     },
+
+    openDrawer(e) {
+      console.log('openDrawer-----', e)
+      this.showFilter = true
+      this.filterId = e
+    }
   },
-};
+   components: {
+    FiltersComponent
+  }
+}
+
 </script>
 
 <style lang="scss">
 .u-page {
   width: 100%;
-	background: #F3F2F2;
-  .qyy-filter {
+  .qyy-filter-bar {
     width: 100%;
     overflow-x: auto;
+    height: 60rpx;
+    .qyy-filter-bar-container{
+      height: 60rpx;
+      line-height: 60rpx;
+        width: 100%;
+      left:0;
+      position: fixed;
+      z-index: 9999999;
+      .qyy-filter-bar-item{
+        padding: 5rpx 15rpx;
+      }
+    }
+  }
+
+  .qyy-filter-container{
+    padding-top: 80rpx;
   }
 
 	.u-card {
@@ -160,5 +221,13 @@ export default {
   height: 120rpx;
   border-radius: 20rpx;
   margin-right: 12rpx;
+}
+
+.qyy-filter-left{
+  width: calc(100% - 70rpx);
+}
+
+.qyy-filter-right{
+  width: 70rpx;
 }
 </style>

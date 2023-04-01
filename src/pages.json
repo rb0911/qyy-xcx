@@ -19,7 +19,7 @@
 			}
 		},
 		{
-			"path": "pages/home/home",
+			"path": "pages/my/my",
 			"style": {
 				"navigationBarTitleText": "小秦关关"
 			}
