@@ -1,7 +1,7 @@
 
 
 export const LOCATION = [
-  '西安', '安康', '汉中','商洛','铜川','宝鸡','咸阳','渭南','延安', '榆林'
+  '西安', '安康', '汉中','商洛','宝鸡','咸阳','渭南','铜川', '延安', '榆林'
 ]
 
 export const FilterList = [
@@ -10,3 +10,8 @@ export const FilterList = [
   { title: '学历', key: 'education', icon: 'arrow-down-fill'},
   { title: '', key: 'all', icon:'list-dot'},
 ]
+
+export const EDUCATION = [
+  '初中以下', '高中', '普通本科', '一批本科','硕士','博士',
+]
+

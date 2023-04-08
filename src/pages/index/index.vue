@@ -5,13 +5,13 @@
         <view class="qyy-filter-bar-container qyy-flex-row qyy-flex-content-between qyy-bg-color-1 qy-text-color-1">
 
           <view class="qyy-flex-row qyy-filter-left">
-            <view class="qyy-filter-bar-item" v-for="filter in filterList" :key="filter.key" @click="()=>{openDrawer(filter.key)}" name="filter.title">
+            <view class="qyy-filter-bar-item" :class="{'qyy-selected-tab': filterId === filter.key}" v-for="filter in filterList" :key="filter.key" @click="()=>{openDrawer(filter.key)}" name="filter.title">
               {{filter.title}} &nbsp; <u-icon :name="filter.icon" class="qyy-font-size-6"></u-icon>
             </view>
           </view>
             
           <view class="qyy-filter-right">
-            <view class="qyy-filter-bar-item" @click="()=>{openDrawer(filterAll.key)}" name="filterAll.title">
+            <view class="qyy-filter-bar-item" :class="{'qyy-selected-tab': filterId === filterAll.key}" @click="()=>{openDrawer(filterAll.key)}" name="filterAll.title">
               {{filterAll.title}} &nbsp; <u-icon :name="filterAll.icon" class="qyy-font-size-12"></u-icon>
             </view>
           </view>
@@ -25,7 +25,7 @@
       </view>
 
       <template>
-        <u-popup v-model="showFilter" mode="top" length="500" zoom="false">
+        <u-popup v-model="showFilter" mode="top" :length="filterPopLength" zoom="false">
           <view class="qyy-filter-container qyy-bg-color-2">
             <FiltersComponent :filterId="filterId" :id="'test'"></FiltersComponent>
           </view>
@@ -42,12 +42,13 @@
 					:body-border-bottom="false"
           :show-foot="false"
           :thumb="thumb"
+          @click="openDetails()"
 					border-radius="35"
 					margin="20"
 					padding="20rpx 8"
         >
 				<view slot="body" class="u-body-item u-flex u-border-bottom u-col-between ">
-					<image src="https://img11.360buyimg.com/n7/jfs/t1/94448/29/2734/524808/5dd4cc16E990dfb6b/59c256f85a8c3757.jpg" mode="aspectFill"></image>
+					<image :src="item.profile" mode="aspectFill"></image>
 					<view>
 						<view class="qyy-flex-row u-line-2">
 							<view class="u-body-item-title">{{ item.nicname }}</view>
@@ -57,7 +58,7 @@
 							</view>
 							<view class="qyy-tags-container">
 								<u-tag :text="item.education" type="success" class="qyy-tag" mode="dark"/>
-								<u-tag :text="item.house" type="error" class="qyy-tag" mode="dark"/>
+								<u-tag :text="item.house" type="error" class="qyy-tag qyy-text-color-light" mode="dark"/>
 								<u-tag v-if="item.vehicle" :text="'已购车'" type="primary" class="qyy-tag" mode="dark"/>
 							</view>
 						</view>
@@ -91,7 +92,8 @@ export default {
       urls: [],
       showFilter: false,
       filterList: FilterList.slice(0, FilterList.length - 1),
-      filterAll: FilterList[FilterList.length - 1]
+      filterAll: FilterList[FilterList.length - 1],
+      filterPopLength: 500
     };
   },
   onLoad() {
@@ -101,6 +103,7 @@ export default {
     scrolltolower() {
       this.loadmore();
     },
+
     loadmore() {
       for (let i = 0; i < 30; i++) {
         this.indexList.push({
@@ -113,6 +116,15 @@ export default {
       console.log('openDrawer-----', e)
       this.showFilter = true
       this.filterId = e
+      if (e === 'all') { this.filterPopLength = 800; return}
+      this.filterPopLength = 400
+    },
+
+    openDetails(){
+      console.log('--openDetails----')
+      uni.navigateTo({
+        url: '/subcom-pkg/personalDetails/index'
+      })
     }
   },
    components: {
@@ -143,6 +155,7 @@ export default {
   }
 
   .qyy-filter-container{
+    padding: 0 20rpx;
     padding-top: 80rpx;
   }
 

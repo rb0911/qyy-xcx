@@ -1,0 +1,121 @@
+@import "colorVariable.scss";
+
+// font size
+.qyy-font-size-12{
+  font-size: 1.2rem !important;
+}
+
+.qyy-font-size-8{
+  font-size: 0.8rem !important;
+}
+
+.qyy-font-size-7{
+  font-size: 0.7rem !important;
+}
+
+.qyy-font-size-6{
+  font-size: 0.6rem !important;
+}
+
+// font weight
+
+.qyy-font-weight-bold {
+  font-weight: bold !important;
+}
+
+// font color
+.qy-text-color-0{
+  color: #161616 !important;
+}
+
+.qy-text-color-1{
+  color: #636262 !important;
+}
+
+.qyy-bg-color-0 {
+	background-color: #F3F2F2 !important;
+}
+
+
+// width
+
+.qy-width-100 {
+  width: 100% !important;
+}
+// background color
+.qyy-bg-color-1 {
+	background-color: #FAFAFA !important;
+}
+
+.qyy-bg-color-2 {
+	background-color: #FEFFFE !important;
+}
+
+.qyy-bg-color-red {
+  background-color: $qyy-color-red;
+}
+
+.qyy-bg-color-blue {
+  background-color: $qyy-color-blue;
+}
+
+.u-mode-dark-error {
+  background-color: $qyy-color-red;
+}
+
+.u-mode-dark-primary {
+  background-color: $qyy-color-blue;
+}
+
+.qyy-text-color-light {
+  color: #f4f4f5 !important;
+}
+
+// margin padding
+.qyy-pd-t-2 {
+  padding-top: 20rpx;
+}
+
+
+// flex
+.qyy-d-flex {
+  display: flex;
+}
+
+.qyy-flex-row {
+  display: flex;
+  flex-direction: row;
+}
+
+.qyy-flex-wrap {
+  flex-wrap: wrap;
+}
+
+.qyy-flex-column {
+  display: flex;
+  flex-direction: column;
+}
+
+.qyy-flex-content-between {
+  display: flex;
+  justify-content: space-between;
+}
+
+.qyy-selected-tab {
+  background: #ffffff;
+  border-radius: 18rpx 18rpx 0 0;
+}
+
+.qyy-tag .u-tag{
+  border-radius: 2rem;
+  padding: 4rpx 8rpx !important;
+  font-size: 8rpx;
+  display: block !important;
+  margin-left: 5rpx;
+}
+
+.qyy-tags-container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}

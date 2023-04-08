@@ -25,6 +25,25 @@
 			}
 		}
 	],
+	"subPackages": [
+		{
+			"root": "subcom-pkg",
+			"pages": [
+				{
+					"path": "personalDetails/index",
+					"style": {
+						"navigationBarTitleText": "个人详情"
+					}
+				},
+				{
+					"path": "requestedMsg/index",
+					"style": {
+						"navigationBarTitleText": "requestedMsg"
+					}
+				}
+			]
+		}
+	],
 	"globalStyle": {
 		"navigationBarTextStyle": "black",
 		"navigationBarTitleText": "uni-app",
