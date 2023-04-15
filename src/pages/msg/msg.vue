@@ -1,5 +1,10 @@
 <template>
-  <div class="home">Msg</div>
+  <view class="qyy-msg">
+    <view class="qyy-msg-container">
+      <view>收到的求认识</view>
+      <view>已发送的求认识</view>
+    </view>
+  </view>
 </template>
 
 <script>

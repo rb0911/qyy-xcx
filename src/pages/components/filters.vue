@@ -1,7 +1,7 @@
 <template>
   <view>
     <view class="filter-all-label qyy-pd-t-2" v-if="filterId === 'all'">地区:</view>
-    <view v-if="filterId === 'location' || filterId === 'all'" class="qyy-filters-location qyy-flex-row qyy-flex-wrap">
+    <view v-if="filterId === 'location' || filterId === 'all'" class="qyy-filters-location qyy-d-flex-row qyy-d-flex-wrap">
       <u-button shape="circle" type="info" size="mini" v-for="location in locations" :key="location" class="filter-items qy-text-color-0">
       <span>{{ location }}</span></u-button >
     </view>
@@ -20,7 +20,7 @@
     <view class="filter-all-label qyy-pd-t-2" v-if="filterId === 'all'">学历:</view>
 
     <view v-if="filterId === 'education' || filterId === 'all'" class="qyy-filters-education qyy-pd-t-2">
-      <view class="qyy-flex-row qyy-flex-wrap">
+      <view class="qyy-d-flex-row qyy-d-flex-wrap">
         <u-button shape="circle" type="info" size="mini" v-for="education in educations" :key="education" class="filter-items qy-text-color-0">
           <span>{{ education }}</span>
         </u-button >

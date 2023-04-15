@@ -1,12 +1,18 @@
 <template>
-  <div class="home">home my</div>
+  <view class="personal-information">
+    zhaoduix
+    <view>开启找对象</view><u-switch v-model="checked"></u-switch>
+  </view>
 </template>
 
 <script>
-
 export default {
   components: {},
-  data: () => ({}),
+  data() {
+    return {
+      showLooking: false
+    }
+  },
   computed: {},
   methods: {},
   watch: {},
@@ -22,16 +28,14 @@ export default {
   // 页面周期函数--监听页面卸载
   onUnload() {},
   // 页面处理函数--监听用户下拉动作
-  onPullDownRefresh() {
-    uni.stopPullDownRefresh();
-  },
+  // onPullDownRefresh() { uni.stopPullDownRefresh(); },
   // 页面处理函数--监听用户上拉触底
-  onReachBottom() {},
+  // onReachBottom() {},
   // 页面处理函数--监听页面滚动(not-nvue)
-  /* onPageScroll(event) {}, */
+  // onPageScroll(event) {},
   // 页面处理函数--用户点击右上角分享
-  /* onShareAppMessage(options) {}, */
-};
+  // onShareAppMessage(options) {},
+} 
 </script>
 
-<style></style>
+<style scoped></style>

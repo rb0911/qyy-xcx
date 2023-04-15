@@ -2,9 +2,9 @@
   <view class="content">
     <view class="u-page qyy-bg-color-0">
       <view class="qyy-filter-bar">
-        <view class="qyy-filter-bar-container qyy-flex-row qyy-flex-content-between qyy-bg-color-1 qy-text-color-1">
+        <view class="qyy-filter-bar-container qyy-d-flex-row qyy-flex-content-between qyy-bg-color-1 qy-text-color-1">
 
-          <view class="qyy-flex-row qyy-filter-left">
+          <view class="qyy-d-flex-row qyy-filter-left">
             <view class="qyy-filter-bar-item" :class="{'qyy-selected-tab': filterId === filter.key}" v-for="filter in filterList" :key="filter.key" @click="()=>{openDrawer(filter.key)}" name="filter.title">
               {{filter.title}} &nbsp; <u-icon :name="filter.icon" class="qyy-font-size-6"></u-icon>
             </view>
@@ -50,8 +50,8 @@
 				<view slot="body" class="u-body-item u-flex u-border-bottom u-col-between ">
 					<image :src="item.profile" mode="aspectFill"></image>
 					<view>
-						<view class="qyy-flex-row u-line-2">
-							<view class="u-body-item-title">{{ item.nicname }}</view>
+						<view class="qyy-d-flex-row u-line-2">
+							<view class="u-body-item-title qyy-font-weight-bold">{{ item.nicname }}</view>
 							<view>
 								<u-icon v-if="item.gender === '男'" name="man" class="icon-man"></u-icon>
 								<u-icon v-if="item.gender === '女'" name="woman" class="icon-woman"></u-icon>

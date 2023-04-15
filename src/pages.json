@@ -17,12 +17,6 @@
 			"style": {
 				"navigationBarTitleText": "center"
 			}
-		},
-		{
-			"path": "pages/my/my",
-			"style": {
-				"navigationBarTitleText": "小秦关关"
-			}
 		}
 	],
 	"subPackages": [
@@ -39,6 +33,12 @@
 					"path": "requestedMsg/index",
 					"style": {
 						"navigationBarTitleText": "requestedMsg"
+					}
+				},
+				{
+					"path": "personalInformation/index",
+					"style": {
+						"navigationBarTitleText": "个人信息"
 					}
 				}
 			]

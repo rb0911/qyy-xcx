@@ -1,14 +1,20 @@
 {
   "nicname": "小橙子",
-  "realName": "张小小",
   "userId": "001",
   "docId": "00001",
   "cardId": "622401199003093398",
   "age": 32,
   "stature": 170,
+
+  "isLooking": true,
+  "memberships": [{
+    "startDate": "2022-12-1",
+    "endDate": "2023-12-1"
+  }],
+
   "gender": "女",
   "career": "工程师",
-  "income": "32万", 
+  "income": "32万",
   "education": "本科",
   "house": "已购房",
   "houseLocation": "西安",
